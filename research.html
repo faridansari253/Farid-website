@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Findings | Rest & Renew</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+/* Base & reset */
+* { box-sizing: border-box; margin:0; padding:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body {
+    background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url('https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+    background-size: cover;
+    color: #e0f7f7;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    color: #e0f7f7;
+    background:
+      linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+      url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80') no-repeat center/cover;
+    background-size: cover;
+}
+header h1 {
+    font-size: 2.8rem;
+    color: #00ffcc;
+    text-shadow: 0 0 12px #00ffccaa;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+header p {
+    font-size: 1.3rem;
+    opacity: 0.85;
+}
+
+/* Nav bar */
+nav {
+    display: flex;
+    justify-content: center;
+    background: rgba(0,0,0,0.75);
+    padding: 15px 10px;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+}
+nav a {
+    color: #00ffcc;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 8px 18px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+nav a:hover,
+nav a.active {
+    background: #00ffcc;
+    color: #000;
+}
+
+/* Main content */
+main.content {
+    max-width: 960px;
+    margin: 30px auto 60px;
+    padding: 0 20px;
+}
+
+/* Glassmorphism boxes */
+.box {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 25px #00ffcc44;
+}
+.box h2 {
+    color: #00ffcc;
+    margin-bottom: 15px;
+    text-shadow: 0 0 6px #00ffccaa;
+}
+.box p, .box ul {
+    line-height: 1.6;
+}
+.box ul li {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Chart canvas styling */
+canvas {
+    background: rgba(0,0,0,0.35);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+/* Download button */
+.download-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(45deg,#00ffcc,#00ccaa);
+    color: #000;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px #00ffccaa;
+}
+.download-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #00ffccff;
+    background: linear-gradient(45deg,#00ccaa,#00ffcc);
+}
+
+/* Centered section */
+.center {
+    text-align: center;
+}
+
+/* Responsive */
+@media(max-width:640px) {
+    header h1 { font-size: 2rem; }
+    nav a { font-size: 1rem; padding: 6px 12px; }
+}
+</style>
+</head>
+
+<body>
+<header>
+    <h1>Research Findings</h1>
+    <p>Impact of Screen Time on Digital Wellness & Healthy Sleep</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="research.html" class="active">Research</a>
+  <a href="awareness.html">Awareness</a>
+  <a href="survey.html">Survey</a>
+  <a href="Chatbot.html">Chatbot</a>
+  <a href="Media gallery.html">Media Gallery</a>
+  <a href="Discussion.html">Discussion</a>
+  <a href="Resources.html">Resources</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main class="content">
+
+    <!-- SUMMARY -->
+    <section class="box">
+        <h2>📄 Research Summary</h2>
+        <p>
+            This study examines the impact of excessive digital screen usage on sleep quality
+            and mental well-being among students. The findings reveal that prolonged screen
+            exposure before bedtime disrupts sleep patterns due to blue light exposure and
+            increased mental stimulation. Awareness initiatives and digital detox practices
+            were found to significantly improve healthy sleep habits.
+        </p>
+    </section>
+
+    <!-- KEY INSIGHTS -->
+    <section class="box">
+        <h2>🔑 Key Insights</h2>
+        <ul>
+            <li>Late-night screen usage is a major cause of poor sleep quality</li>
+            <li>Blue light exposure reduces melatonin production</li>
+            <li>Digital detox improves sleep and mental health</li>
+            <li>Community awareness programs positively change habits</li>
+        </ul>
+    </section>
+
+    <!-- GRAPH -->
+    <section class="box">
+        <h2>📊 Screen Time vs Sleep Duration</h2>
+        <canvas id="researchChart" height="150"></canvas>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section class="box center">
+        <h2>⬇ Download Full Research Paper</h2>
+        <p>Access the complete research documentation in PDF format.</p>
+        <a class="download-btn" href="Rest_and_Renew_Research_Paper.pdf" download>
+            Download Research Paper (PDF)
+        </a>
+    </section>
+
+</main>
+
+<script>
+const ctx = document.getElementById('researchChart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['< 1 hr', '1–2 hrs', '2–4 hrs', '> 4 hrs'],
+        datasets: [{
+            label: 'Participants using screens before sleep (%)',
+            data: [15, 35, 40, 10],
+            backgroundColor: '#00ffd5'
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                labels: {
+                    color: '#e0f7f7',
+                    font: { size: 14 }
+                }
+            }
+        },
+        scales: {
+            x: { ticks: { color:'#e0f7f7', font:{size:13} } },
+            y: { ticks: { color:'#e0f7f7', font:{size:13}, beginAtZero:true } }
+        }
+    }
+});
+</script>
+
+</body>
+</html>

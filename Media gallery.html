@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media Gallery | Digital Wellness</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:#e0f7f7;
+  background:
+  linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+  url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+  background-size:cover;
+}
+
+header{
+  text-align:center;
+  padding:80px 20px;
+  background:
+  linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+  url('https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1470&q=80') center/cover;
+  text-shadow:0 0 15px #00ffccaa;
+}
+
+header h1{
+  font-size:3rem;
+  color:#00ffcc;
+  margin-bottom:15px;
+  text-transform:uppercase;
+}
+
+header p{
+  font-size:1.3rem;
+  opacity:0.9;
+}
+
+nav{
+  background:rgba(0,0,0,0.85);
+  padding:15px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+nav a{
+  color:#00ffcc;
+  text-decoration:none;
+  margin:0 15px;
+  font-weight:bold;
+  padding:8px 18px;
+  border-radius:25px;
+  transition:0.3s;
+}
+
+nav a:hover,
+nav a.active{
+  background:#00ffcc;
+  color:black;
+}
+
+.gallery-container{
+  max-width:1200px;
+  margin:60px auto;
+  padding:20px;
+}
+
+.gallery-section{
+  margin-bottom:60px;
+  background:rgba(255,255,255,0.07);
+  backdrop-filter:blur(12px);
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 0 30px #00ffcc33;
+  transition:0.3s;
+}
+
+.gallery-section:hover{
+  transform:translateY(-5px);
+}
+
+.gallery-section h2{
+  color:#00ffcc;
+  margin-bottom:25px;
+  text-shadow:0 0 8px #00ffcc88;
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+  gap:25px;
+}
+
+.gallery-grid img{
+  width:100%;
+  border-radius:15px;
+  transition:0.4s ease;
+  box-shadow:0 0 15px #00ffcc22;
+}
+
+.gallery-grid img:hover{
+  transform:scale(1.07);
+  box-shadow:0 0 25px #00ffcc66;
+}
+
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(350px,1fr));
+  gap:30px;
+}
+
+.video-grid iframe{
+  width:100%;
+  aspect-ratio:16/9;
+  border-radius:15px;
+  box-shadow:0 0 20px #00ffcc44;
+  border:none;
+}
+
+@media(max-width:768px){
+  header h1{ font-size:2rem; }
+  nav a{ display:inline-block; margin:5px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Media Gallery</h1>
+  <p>Infographics • Awareness Posters • Educational Videos</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="research.html">Research</a>
+  <a href="awareness.html">Awareness</a>
+  <a href="survey.html">Survey</a>
+  <a href="Chatbot.html">Chatbot</a>
+  <a href="Media gallery.html" class="active">Media Gallery</a>
+  <a href="Discussion.html">Discussion</a>
+  <a href="Resources.html">Resources</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main class="gallery-container">
+
+<section class="gallery-section">
+<h2>Infographics</h2>
+<div class="gallery-grid">
+  <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=800&q=80" alt="Sleep Cycle Infographic">
+  <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Blue Light and Screen Use">
+  <img src=https://cdn.shopify.com/s/files/1/0283/6535/7155/files/Rules-of-healthy-Sleep_2.jpg?v=1676369176alt="Digital Detox Concept">
+</div>
+</section>
+
+<section class="gallery-section">
+<h2>Awareness Posters</h2>
+<div class="gallery-grid">
+  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Digital Wellness Poster">
+  <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=800&q=80" alt="Healthy Sleep Awareness">
+  <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=800&q=80" alt="Reduce Screen Time Poster">
+</div>
+</section>
+
+<section class="gallery-section">
+<h2>Videos / Tutorials</h2>
+<div class="video-grid">
+
+<iframe src="https://www.youtube.com/embed/1nZEdqcGVzo"
+title="How Blue Light Affects Sleep"
+allowfullscreen></iframe>
+
+<iframe src="https://www.youtube.com/embed/5MuIMqhT8DM"
+title="Importance of Sleep for Students"
+allowfullscreen></iframe>
+
+</div>
+</section>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Survey | Screen Time</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+:root{
+  --bg-dark: rgba(0,0,0,0.7);
+  --card-dark: rgba(255,255,255,0.1);
+  --text-dark: white;
+}
+
+body, html {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:url('https://images.unsplash.com/photo-1492724441997-5dc865305da7') center/cover fixed;
+  color:var(--text-dark);
+  transition:0.3s;
+  height: 100%;
+}
+
+header {
+  text-align: center;
+  padding: 60px 20px 40px;
+  color: #e0f7f7;
+  background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80') no-repeat center/cover;
+  background-size: cover;
+}
+header h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+header p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:url('https://images.unsplash.com/photo-1492724441997-5dc865305da7') center/cover fixed;
+  color:var(--text-dark);
+  transition:0.3s;
+}
+
+.light-mode{
+  --bg-dark: rgba(255,255,255,0.8);
+  --card-dark: rgba(255,255,255,0.9);
+  --text-dark: black;
+}
+.survey-section{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:60px 20px;
+}
+
+.survey-card{
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  padding:40px;
+  border-radius:20px;
+  text-align:center;
+  max-width:600px;
+  box-shadow:0 0 30px rgba(0,0,0,0.5);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.survey-card h2{
+  margin-bottom:15px;
+  font-size:28px;
+  color:#00ffcc;
+}
+
+.survey-card p{
+  margin-bottom:25px;
+  font-size:16px;
+  opacity:0.9;
+}
+
+.survey-btn{
+  display:inline-block;
+  padding:15px 35px;
+  background: linear-gradient(45deg,#00ffcc,#00ccaa);
+  color:black;
+  font-weight:bold;
+  text-decoration:none;
+  border-radius:50px;
+  font-size:18px;
+  transition:0.3s;
+  box-shadow:0 0 20px rgba(0,255,204,0.6);
+  animation: pulse 2s infinite;
+}
+
+.survey-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 35px rgba(0,255,204,1);
+}
+
+@keyframes pulse{
+  0%{ box-shadow:0 0 15px rgba(0,255,204,0.6); }
+  50%{ box-shadow:0 0 30px rgba(0,255,204,1); }
+  100%{ box-shadow:0 0 15px rgba(0,255,204,0.6); }
+}
+
+@keyframes fadeIn{
+  from{ opacity:0; transform:translateY(20px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+.overlay{
+  background:var(--bg-dark);
+  min-height:100vh;
+  padding-bottom:30px;
+}
+
+header{
+  text-align:center;
+  padding:20px;
+  font-size:28px;
+  font-weight:bold;
+}
+
+nav{
+  text-align:center;
+  padding:10px;
+  background: rgba(0,0,0,0.6);
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:10px;
+  font-weight:bold;
+  padding:8px 16px;
+  border-radius:25px;
+  transition:0.3s;
+}
+
+nav a:hover,
+nav a.active{
+  background:#00ffcc;
+  color:black;
+}
+
+.container{
+  width:90%;
+  max-width:1000px;
+  margin:30px auto;
+}
+
+.card{
+  background:var(--card-dark);
+  backdrop-filter:blur(10px);
+  padding:20px;
+  margin-bottom:30px;
+  border-radius:15px;
+  box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+.poll-option{
+  display:block;
+  margin:10px 0;
+  padding:10px;
+  background:#00ffcc;
+  color:black;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.progress{
+  height:20px;
+  background:#ccc;
+  border-radius:10px;
+  overflow:hidden;
+  margin-bottom:10px;
+}
+
+.progress-bar{
+  height:100%;
+  width:0%;
+  background:#00ffcc;
+  transition:0.5s;
+}
+
+.toggle-btn{
+  position:fixed;
+  top:15px;
+  right:15px;
+  padding:8px 15px;
+  border:none;
+  border-radius:20px;
+  background:#00ffcc;
+  cursor:pointer;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<button class="toggle-btn" onclick="toggleMode()">Toggle Mode</button>
+
+<div class="overlay">
+
+<header>
+  <h1>Student Sleep &amp; Screen Time Survey</h1>
+  <p>Help us understand your habits</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="research.html">Research</a>
+  <a href="awareness.html">Awareness</a>
+  <a href="survey.html" class="active">Survey</a>
+  <a href="Chatbot.html">Chatbot</a>
+  <a href="Media gallery.html">Media gallery</a>
+  <a href="Discussion.html">Discussion</a>
+  <a href="Resources.html">Resources</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+
+<!-- ✅ GOOGLE FORM FIXED -->
+
+
+<div class="survey-section">
+  <div class="survey-card">
+    <h2>📱 Student Sleep & Screen Time Survey</h2>
+    <p>Your response helps us understand how screen usage affects sleep patterns.</p>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdkfmyx6I-uRiKx1pH94HEYh_pGCxmf6k3hmEVfa9roKKwSsA/viewform"
+       target="_blank"
+       class="survey-btn">
+       🚀 Start Survey
+    </a>
+  </div>
+</div>
+
+
+</div>
+
+<div class="card">
+<h2>Quick Poll</h2>
+<p>How many hours do you use your phone daily?</p>
+
+<button class="poll-option" onclick="vote(0)">Less than 3 hours</button>
+<button class="poll-option" onclick="vote(1)">3 - 6 hours</button>
+<button class="poll-option" onclick="vote(2)">6 - 9 hours</button>
+<button class="poll-option" onclick="vote(3)">More than 9 hours</button>
+
+<div>Less than 3 hours</div>
+<div class="progress"><div class="progress-bar" id="bar0"></div></div>
+
+<div>3 - 6 hours</div>
+<div class="progress"><div class="progress-bar" id="bar1"></div></div>
+
+<div>6 - 9 hours</div>
+<div class="progress"><div class="progress-bar" id="bar2"></div></div>
+
+<div>More than 9 hours</div>
+<div class="progress"><div class="progress-bar" id="bar3"></div></div>
+
+<canvas id="pollChart"></canvas>
+
+</div>
+
+</div>
+</div>
+
+<script>
+let votes = JSON.parse(localStorage.getItem("pollVotes")) || [0,0,0,0];
+
+function vote(option){
+  votes[option]++;
+  localStorage.setItem("pollVotes", JSON.stringify(votes));
+  updateResults();
+}
+
+function updateResults(){
+  let total = votes.reduce((a,b)=>a+b) || 1;
+
+  votes.forEach((v,i)=>{
+    let percent = (v/total)*100;
+    document.getElementById("bar"+i).style.width = percent + "%";
+  });
+
+  chart.data.datasets[0].data = votes;
+  chart.update();
+}
+
+let ctx = document.getElementById('pollChart').getContext('2d');
+let chart = new Chart(ctx,{
+  type:'bar',
+  data:{
+    labels:['<3 hrs','3-6 hrs','6-9 hrs','9+ hrs'],
+    datasets:[{
+      label:'Votes',
+      data:votes,
+      backgroundColor:'#00ffcc'
+    }]
+  }
+});
+
+updateResults();
+
+function toggleMode(){
+  document.body.classList.toggle("light-mode");
+}
+</script>
+
+</body>
+</html>

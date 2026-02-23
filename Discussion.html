@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Discussion | Screen Time Awareness</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
+  color: #fff;
+  background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80') 
+    no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 70px 20px 40px;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80') 
+    center/cover;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #00ffcc;
+  text-shadow: 0 0 12px #00ffccaa;
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0.85;
+}
+
+/* NAVBAR */
+nav {
+  background: rgba(0,0,0,0.85);
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav a {
+  color: #00ffcc;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  background: #00ffcc;
+  color: black;
+}
+
+/* MAIN */
+main {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+/* EMBED SECTION */
+.embed-section {
+  background: rgba(0,0,0,0.6);
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow: 0 0 30px #00ffcc44;
+  backdrop-filter: blur(10px);
+}
+
+.embed-section h2 {
+  text-align: center;
+  color: #00ffcc;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #00ffccaa;
+}
+
+.embed-frame {
+  width: 100%;
+  height: 700px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #00ffcc55;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .embed-frame {
+    height: 500px;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Community Discussion</h1>
+  <p>Embedded Awareness Blog</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="research.html">Research</a>
+  <a href="awareness.html">Awareness</a>
+  <a href="survey.html">Survey</a>
+  <a href="Chatbot.html">Chatbot</a>
+  <a href="Media gallery.html">Media Gallery</a>
+  <a href="Discussion.html" class="active">Discussion</a>
+  <a href="Resources.html">Resources</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+
+<section class="embed-section">
+  <h2>Rest & Renew Community Awareness Program</h2>
+
+  <iframe 
+    src="https://faridceprestnrenew.blogspot.com/2026/02/rest-renew-community-awareness-program.html"
+    class="embed-frame"
+    title="Rest and Renew Community Awareness Blog">
+  </iframe>
+
+</section>
+
+</main>
+
+</body>
+</html>

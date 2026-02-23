@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Rest & Renew</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+/* Animated Gradient Background */
+body{
+height:100vh;
+background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#000428);
+background-size:400% 400%;
+animation:gradientBG 12s ease infinite;
+color:white;
+}
+
+@keyframes gradientBG{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+header {
+  text-align: center;
+  padding: 60px 20px 40px;
+  color: #e0f7f7;
+  background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80') no-repeat center/cover;
+  background-size: cover;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+header p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+/* NAV */
+nav{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(10px);
+padding:15px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 15px;
+  font-weight:500;
+  padding:8px 18px;
+  border-radius:30px;
+  transition:0.3s;
+}
+
+nav a:hover,
+nav a.active{
+  background:#00ffcc;
+  color:#000;
+}
+
+/* MAIN */
+.contact-container{
+width:90%;
+max-width:1100px;
+margin:40px auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+/* CARD */
+.contact-info,
+.contact-form-section{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+transition:0.4s;
+}
+
+.contact-info:hover,
+.contact-form-section:hover{
+transform:translateY(-10px);
+}
+
+/* INFO */
+.contact-info h2{
+margin-bottom:20px;
+color:#00e6e6;
+}
+
+.info-list{
+list-style:none;
+margin-bottom:20px;
+}
+
+.info-list li{
+margin-bottom:15px;
+}
+
+.info-list i{
+margin-right:10px;
+color:#00e6e6;
+}
+
+.social-links a{
+color:white;
+margin-right:15px;
+font-size:22px;
+transition:0.3s;
+}
+
+.social-links a:hover{
+color:#00e6e6;
+}
+
+/* PROFILE */
+.profile-image{
+text-align:center;
+margin-bottom:20px;
+}
+
+.profile-photo{
+width:130px;
+height:130px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid #00e6e6;
+}
+
+.qr-code{
+width:100px;
+margin-top:10px;
+border-radius:10px;
+}
+
+/* FORM */
+.contact-form h3{
+margin-bottom:20px;
+color:#00e6e6;
+}
+
+.form-group{
+margin-bottom:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+outline:none;
+background:rgba(255,255,255,0.15);
+color:white;
+}
+
+.submit-btn{
+width:100%;
+padding:12px;
+border:none;
+border-radius:30px;
+background:#00e6e6;
+color:black;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.submit-btn:hover{
+background:white;
+}
+
+/* SUCCESS POPUP */
+.popup{
+position:fixed;
+top:20px;
+right:20px;
+background:#00e6e6;
+color:black;
+padding:15px 25px;
+border-radius:10px;
+display:none;
+font-weight:600;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.contact-container{
+grid-template-columns:1fr;
+}
+header h1{
+font-size:28px;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="popup" id="popup">Message Sent Successfully ✅</div>
+
+<header>
+  <h1>Contact Us</h1>
+  <p>Reach out to the team</p>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="research.html">Research</a>
+<a href="awareness.html">Awareness</a>
+<a href="survey.html">Survey</a>
+<a href="Chatbot.html">Chatbot</a>
+<a href="Media gallery.html">Media gallery</a>
+<a href="Discussion.html">Discussion</a>
+<a href="Resources.html">Resources</a>
+<a href="contact.html" class="active">Contact</a>
+</nav>
+
+<main>
+<div class="contact-container">
+
+<section class="contact-info">
+<h2>Ansari Mohd Farid Mohd Hanif</h2>
+
+<ul class="info-list">
+<li><i class="fa-solid fa-envelope"></i> fansarifarid8888@gmail.com</li>
+<li><i class="fa-solid fa-graduation-cap"></i> SYBSc IT</li>
+<li><i class="fa-solid fa-phone"></i> +91 9876543210</li>
+<li><i class="fa-solid fa-location-dot"></i> Mumbai, India</li>
+</ul>
+
+<h3>Follow Me</h3>
+<div class="social-links">
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fab fa-github"></i></a>
+</div>
+</section>
+
+<section class="contact-form-section">
+
+<div class="profile-image">
+<img src="images/Photo.jpeg" class="profile-photo">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://faridceprestnrenew.blogspot.com/2026/02/rest-renew-community-awareness-program.html" 
+     class="qr-code" 
+     alt="QR Code">
+</div>  
+
+<!-- EMAIL RECEIVER SYSTEM -->
+<form class="contact-form" action="https://formsubmit.co/fansarifarid8888@gmail.com" method="POST" onsubmit="showPopup()">
+<h3>Send Me a Message</h3>
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New Contact Form Message">
+
+<div class="form-group">
+<input type="text" name="name" placeholder="Your Name" required>
+</div>
+
+<div class="form-group">
+<input type="email" name="email" placeholder="Email Address" required>
+</div>
+
+<div class="form-group">
+<textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+</div>
+
+<button type="submit" class="submit-btn">Send Message</button>
+
+</form>
+</section>
+
+</div>
+</main>
+
+<script>
+function showPopup(){
+let popup=document.getElementById("popup");
+popup.style.display="block";
+setTimeout(()=>{
+popup.style.display="none";
+},3000);
+}
+</script>
+
+</body>
+</html>

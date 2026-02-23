@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rest & Renew | Digital Wellness</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1506126613408-eca07ce68773') no-repeat center/cover;
+color:white;
+min-height:100vh;
+transition:0.4s ease;
+}
+
+/* LIGHT MODE */
+body.light{
+background:linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.9)),
+url('https://images.unsplash.com/photo-1492724441997-5dc865305da7') no-repeat center/cover;
+color:#222;
+}
+
+/* NAVBAR */
+nav{
+  display:flex;
+  justify-content:center;
+  background: rgba(0,0,0,0.75);
+  padding: 15px 10px;
+  gap: 20px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  flex-wrap:wrap;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:500;
+  padding:8px 18px;
+  border-radius:30px;
+  margin:0 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active{
+  background:#00ffcc;
+  color:#000;
+}
+
+.toggle-btn{
+position:absolute;
+right:20px;
+cursor:pointer;
+background:#00e6e6;
+border:none;
+padding:8px 15px;
+border-radius:20px;
+font-weight:600;
+}
+
+
+/* CONTAINER */
+.container{
+width:90%;
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+padding-bottom:60px;
+}
+
+/* CARDS */
+.card{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(15px);
+padding:25px;
+border-radius:15px;
+transition:0.4s;
+box-shadow:0 8px 25px rgba(0,0,0,0.3);
+animation:fadeUp 1s ease forwards;
+opacity:0;
+}
+
+.card:hover{
+transform:translateY(-10px);
+background:rgba(255,255,255,0.2);
+}
+
+.card h2{
+margin-bottom:15px;
+color:#00e6e6;
+}
+
+.card ul{
+list-style:none;
+}
+
+.card ul li{
+margin-bottom:10px;
+}
+
+.card ul li a{
+color:white;
+text-decoration:none;
+}
+
+.card ul li a:hover{
+color:#00e6e6;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:rgba(0,0,0,0.8);
+font-size:14px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+@keyframes fadeUp{
+from{transform:translateY(40px);opacity:0;}
+to{transform:translateY(0);opacity:1;}
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 60px 20px 40px;
+  color: #e0f7f7;
+  background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80') no-repeat center/cover;
+  background-size: cover;
+}
+header h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+header p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.hero h1{
+font-size:32px;
+}
+.toggle-btn{
+position:relative;
+margin-top:10px;
+}
+}
+</style>
+</head>
+
+<body>
+
+
+
+<button class="toggle-btn" onclick="toggleMode()">Light Mode</button>
+
+<header>
+  <h1>Resources</h1>
+  <p>Community Resources for Digital Wellness & Healthy Sleep</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="research.html">Research</a>
+  <a href="awareness.html">Awareness</a>
+  <a href="survey.html">Survey</a>
+  <a href="Chatbot.html">Chatbot</a>
+  <a href="Media gallery.html">Media Gallery</a>
+  <a href="Discussion.html">Discussion</a>
+  <a href="Resources.html" class="active">Resources</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section class="container">
+
+<div class="card">
+<h2>🏛 Government Portals</h2>
+<ul>
+<li><a href="https://telemanas.mohfw.gov.in/" target="_blank">Tele-MANAS</a></li>
+<li><a href="https://manodarpan.education.gov.in/" target="_blank">Manodarpan</a></li>
+<li><a href="https://ciet.ncert.gov.in/" target="_blank">NCERT Digital Wellness</a></li>
+<li><a href="https://www.nhm.gov.in/" target="_blank">National Health Mission</a></li>
+</ul>
+</div>
+
+<div class="card">
+<h2>☎ Helplines</h2>
+<p><strong>Tele-MANAS:</strong> 14416 / 1-800-891-4416</p>
+<p><strong>Emergency:</strong> 112</p>
+<p><strong>AASRA:</strong> 91-9820466726</p>
+</div>
+
+<div class="card">
+<h2>📘 Learning Resources</h2>
+<ul>
+<li>Healthy Sleep Habits</li>
+<li>Digital Detox Strategies</li>
+<li>Mindfulness & Meditation</li>
+<li>Responsible Tech Usage</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🛌 Healthy Sleep Tips</h2>
+<ul>
+<li>Avoid screens 1 hour before bed</li>
+<li>Follow fixed sleep schedule</li>
+<li>Practice regular digital detox</li>
+<li>Create calm bedtime routine</li>
+</ul>
+</div>
+
+</section>
+
+<footer>
+© 2026 Rest & Renew | Digital Wellness Awareness Program
+</footer>
+
+<script>
+function toggleMode(){
+document.body.classList.toggle("light");
+let btn=document.querySelector(".toggle-btn");
+if(document.body.classList.contains("light")){
+btn.innerText="Dark Mode";
+}else{
+btn.innerText="Light Mode";
+}
+}
+</script>
+
+</body>
+</html>
