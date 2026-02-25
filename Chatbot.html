@@ -1,215 +1,234 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Future Scope | Digital Wellness</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Wellness Chatbot</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-  url('https://images.unsplash.com/photo-1498050108023-c5249f4df085') center/cover fixed;
-  color: white;
+
+/* RESET */
+*{box-sizing:border-box;margin:0;padding:0;}
+
+body{
+font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+background:
+linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+url('https://images.unsplash.com/photo-1498050108023-c5249f4df085') center/cover fixed;
+color:white;
 }
 
 /* HEADER */
-header {
-  text-align: center;
-  padding: 60px 20px 40px;
-  color: #e0f7f7;
-  background:
-    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80') no-repeat center/cover;
-  background-size: cover;
+header{
+text-align:center;
+padding:60px 20px 40px;
+background:
+linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d') no-repeat center/cover;
 }
 
-header h1 {
-  font-size: 2.8rem;
-  font-weight: 900;
-  line-height: 1.2;
-  margin-bottom: 10px;
-  text-transform: uppercase;
+header h1{
+font-size:2.5rem;
+font-weight:900;
+text-transform:uppercase;
 }
 
-header p {
-  font-size: 1.3rem;
-  font-weight: 600;
-  opacity: 0.85;
+header p{
+font-size:1.2rem;
+opacity:0.85;
+margin-top:10px;
 }
 
-/* NAV */
-nav {
-  background: rgba(0,0,0,0.9);
-  padding: 12px;
-  text-align: center;
+/* NAVBAR */
+nav{
+display:flex;
+justify-content:center;
+background:rgba(0,0,0,0.75);
+padding:15px 10px;
+gap:20px;
+position:sticky;
+top:0;
+z-index:100;
+flex-wrap:wrap;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 12px;
-  font-weight: bold;
+nav a{
+color:#00ffcc;
+text-decoration:none;
+font-weight:700;
+font-size:1.05rem;
+padding:8px 18px;
+border-radius:30px;
+transition:0.3s;
 }
 
 nav a:hover,
-nav a.active {
-  background: cyan;
-  color: black;
+nav a.active{
+background:#00ffcc;
+color:#000;
 }
 
-/* MAIN */
-main {
-  padding: 40px;
+/* MAIN CONTENT */
+main{
+max-width:900px;
+margin:40px auto;
+padding:0 20px;
 }
 
-section {
-  background: rgba(0,0,0,0.75);
-  padding: 25px;
-  margin-bottom: 30px;
-  border-radius: 12px;
+section{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+padding:25px;
+margin-bottom:30px;
+border-radius:15px;
+box-shadow:0 0 20px #00ffcc33;
 }
 
-h2 {
-  color: cyan;
+h2{
+color:#00ffcc;
+margin-bottom:15px;
+}
+
+/* LIST STYLE */
+section ul{
+padding-left:20px;
+}
+
+section ul li{
+margin-bottom:10px;
 }
 
 /* FAQ */
-.faq-question {
-  cursor: pointer;
-  color: cyan;
-  font-weight: bold;
-  margin-top: 10px;
+.faq-question{
+cursor:pointer;
+color:#00ffcc;
+font-weight:bold;
+margin-top:10px;
 }
 
-.faq-answer {
-  display: none;
-  margin-top: 5px;
+.faq-answer{
+display:none;
+margin-top:5px;
 }
 
 /* QUICK LINKS */
-.quick-links a {
-  display: inline-block;
-  margin: 8px;
-  padding: 10px 15px;
-  background: cyan;
-  color: black;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
+.quick-links a{
+display:inline-block;
+margin:8px;
+padding:10px 15px;
+background:#00ffcc;
+color:black;
+text-decoration:none;
+border-radius:6px;
+font-weight:bold;
 }
 
-.quick-links a:hover {
-  background: white;
+.quick-links a:hover{
+background:white;
 }
 
 /* CHAT BUTTON */
-.chat-icon {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: linear-gradient(45deg, cyan, #00ffcc);
-  color: black;
-  padding: 18px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 18px;
-  box-shadow: 0 0 20px cyan;
-  transition: 0.3s;
+.chat-icon{
+position:fixed;
+bottom:20px;
+right:20px;
+background:linear-gradient(45deg,cyan,#00ffcc);
+color:black;
+padding:18px;
+border-radius:50%;
+cursor:pointer;
+font-size:18px;
+box-shadow:0 0 20px cyan;
+transition:0.3s;
 }
 
-.chat-icon:hover {
-  transform: scale(1.1);
+.chat-icon:hover{
+transform:scale(1.1);
 }
 
 /* CHATBOX */
-.chatbox {
-  display: none;
-  flex-direction: column;
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  width: 350px;
-  height: 450px;
-  background: #0f0f0f;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 0 25px cyan;
+.chatbox{
+display:none;
+flex-direction:column;
+position:fixed;
+bottom:90px;
+right:20px;
+width:350px;
+height:450px;
+background:#0f0f0f;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 0 25px cyan;
 }
 
-.chat-header {
-  background: linear-gradient(45deg, cyan, #00ffcc);
-  color: black;
-  padding: 12px;
-  text-align: center;
-  font-weight: bold;
+.chat-header{
+background:linear-gradient(45deg,cyan,#00ffcc);
+color:black;
+padding:12px;
+text-align:center;
+font-weight:bold;
 }
 
-.chat-body {
-  flex: 1;
-  padding: 10px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
+.chat-body{
+flex:1;
+padding:10px;
+overflow-y:auto;
+display:flex;
+flex-direction:column;
 }
 
-.message {
-  padding: 8px 12px;
-  margin: 6px 0;
-  border-radius: 15px;
-  max-width: 75%;
-  font-size: 14px;
+.message{
+padding:8px 12px;
+margin:6px 0;
+border-radius:15px;
+max-width:75%;
+font-size:14px;
 }
 
-.user {
-  background: cyan;
-  color: black;
-  align-self: flex-end;
-  border-bottom-right-radius: 3px;
+.user{
+background:cyan;
+color:black;
+align-self:flex-end;
 }
 
-.bot {
-  background: #222;
-  color: cyan;
-  align-self: flex-start;
-  border-bottom-left-radius: 3px;
+.bot{
+background:#222;
+color:cyan;
+align-self:flex-start;
 }
 
-.typing {
-  font-style: italic;
-  opacity: 0.7;
+.chat-input{
+display:flex;
 }
 
-.chat-input {
-  display: flex;
+.chat-input input{
+flex:1;
+padding:10px;
+border:none;
+outline:none;
 }
 
-.chat-input input {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  outline: none;
+.chat-input button{
+padding:10px;
+border:none;
+background:cyan;
+cursor:pointer;
+font-weight:bold;
 }
 
-.chat-input button {
-  padding: 10px;
-  border: none;
-  background: cyan;
-  cursor: pointer;
-  font-weight: bold;
+.clear-btn{
+background:red;
+color:white;
 }
 
-.clear-btn {
-  background: red;
-  color: white;
-}
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>AI Wellness Chatbot</h1>
-  <p>Ask questions for healthy habits</p>
+<h1>AI Wellness Chatbot</h1>
+<p>Ask questions for healthy digital habits</p>
 </header>
 
 <nav>
@@ -241,13 +260,13 @@ h2 {
 <h2>FAQs</h2>
 
 <div class="faq-question" onclick="toggleFAQ(this)">What is Digital Wellness?</div>
-<div class="faq-answer">Maintaining healthy balance between technology and life.</div>
+<div class="faq-answer">Maintaining a healthy balance between technology and daily life.</div>
 
 <div class="faq-question" onclick="toggleFAQ(this)">How does screen affect sleep?</div>
 <div class="faq-answer">Blue light reduces melatonin and disturbs sleep cycle.</div>
 
 <div class="faq-question" onclick="toggleFAQ(this)">What is 20-20-20 rule?</div>
-<div class="faq-answer">Every 20 minutes look 20 feet away for 20 seconds.</div>
+<div class="faq-answer">Every 20 minutes, look 20 feet away for 20 seconds.</div>
 
 </section>
 
@@ -272,7 +291,6 @@ h2 {
 <div class="chat-input">
 <input type="text" id="userInput" placeholder="Ask something..." onkeypress="handleKey(event)">
 <button onclick="sendMessage()">Send</button>
-<button onclick="startVoice()">🎤</button>
 <button class="clear-btn" onclick="clearChat()">X</button>
 </div>
 </div>
@@ -280,109 +298,69 @@ h2 {
 <script>
 
 function toggleFAQ(el){
-let ans = el.nextElementSibling;
-ans.style.display = ans.style.display === "block" ? "none" : "block";
+let ans=el.nextElementSibling;
+ans.style.display=ans.style.display==="block"?"none":"block";
 }
 
 function toggleChat(){
-let chat = document.getElementById("chatbox");
-let body = document.getElementById("chatBody");
-chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+let chat=document.getElementById("chatbox");
+chat.style.display=chat.style.display==="flex"?"none":"flex";
 
-if(body.innerHTML === ""){
-addBotMessage("Hello 👋 I'm your AI Wellness Bot. Ask me anything about digital wellness!");
+if(document.getElementById("chatBody").innerHTML===""){
+addBotMessage("Hello 👋 I'm your AI Wellness Bot. Ask me about sleep or screen time!");
 }
 }
 
 function handleKey(e){
-if(e.key === "Enter") sendMessage();
+if(e.key==="Enter"){
+e.preventDefault();
+sendMessage();
+}
 }
 
 function sendMessage(){
-let input = document.getElementById("userInput").value.trim();
-if(input === "") return;
+let input=document.getElementById("userInput").value.trim();
+if(input==="") return;
 
 addUserMessage(input);
-document.getElementById("userInput").value = "";
-
-showTyping();
+document.getElementById("userInput").value="";
 
 setTimeout(()=>{
-removeTyping();
-let reply = generateReply(input.toLowerCase());
+let reply=generateReply(input.toLowerCase());
 addBotMessage(reply);
-},1000);
+},700);
 }
 
 function addUserMessage(text){
-let msg = document.createElement("div");
-msg.className = "message user";
-msg.innerText = text;
+let msg=document.createElement("div");
+msg.className="message user";
+msg.innerText=text;
 document.getElementById("chatBody").appendChild(msg);
+autoScroll();
 }
 
 function addBotMessage(text){
-let msg = document.createElement("div");
-msg.className = "message bot";
-msg.innerText = text;
+let msg=document.createElement("div");
+msg.className="message bot";
+msg.innerText=text;
 document.getElementById("chatBody").appendChild(msg);
+autoScroll();
 }
 
-function showTyping(){
-let msg = document.createElement("div");
-msg.className = "message bot typing";
-msg.id="typing";
-msg.innerText="Bot is typing...";
-document.getElementById("chatBody").appendChild(msg);
-}
-
-function removeTyping(){
-let t=document.getElementById("typing");
-if(t) t.remove();
+function autoScroll(){
+let chatBody=document.getElementById("chatBody");
+chatBody.scrollTop=chatBody.scrollHeight;
 }
 
 function generateReply(input){
-
-if(input.includes("hi")||input.includes("hello"))
-return "Hey there 😊 How can I help you today?";
-
-if(input.includes("sleep"))
-return "Avoid screens 1 hour before sleep and use night mode 😴";
-
-if(input.includes("eye"))
-return "Follow 20-20-20 rule to reduce eye strain 👀";
-
-if(input.includes("addiction"))
-return "Set app limits and schedule offline time 📵";
-
-if(input.includes("stress"))
-return "Take digital detox breaks and reduce social media use 🧘";
-
-if(input.includes("motivate"))
-return "Small healthy digital habits create big life improvements 💪";
-
-let replies=[
-"Balance online and offline life ⚖",
-"Too much screen time affects focus.",
-"Take regular breaks from devices.",
-"Healthy tech usage boosts productivity 🚀",
-"Your wellbeing matters more than notifications 🔔"
-];
-
-return replies[Math.floor(Math.random()*replies.length)];
+if(input.includes("sleep")) return "Avoid screens 1 hour before sleep 😴";
+if(input.includes("stress")) return "Take regular digital detox breaks 🧘";
+if(input.includes("hello")||input.includes("hi")) return "Hello 👋 How can I help?";
+return "Balance your online and offline life ⚖";
 }
 
 function clearChat(){
 document.getElementById("chatBody").innerHTML="";
-}
-
-function startVoice(){
-let recognition=new (window.SpeechRecognition||window.webkitSpeechRecognition)();
-recognition.onresult=function(event){
-document.getElementById("userInput").value=event.results[0][0].transcript;
-sendMessage();
-}
-recognition.start();
 }
 
 </script>
